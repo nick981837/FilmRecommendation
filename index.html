@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Film Recommendation </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+</head>
+<body>
+  <div class='overlay'hidden id='overlay'>
+  	<div class='detailContainer'>
+  		<div class='detailNav'>
+  			<span id='desName'>FANTASY ISLAND</span>
+  			<i class="fas fa-times" onclick='closeDetail()'></i>
+  		</div>
+  		<div class='DescriptionContainer'>
+  		<img class='desImage' alt='image' src="image.jpg" id='desImage'>
+  		<div class='paragraph'>
+  		<p>realease at:<span id='desTime'>2020-04-25<span></p>
+  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+  	</div>
+	  	<div class='closeContainer'>
+	    <button class='closeButton' onclick='closeDetail()'>Close</button>
+	    </div>
+  	</div>
+  </div>
+  <div class='container'>
+  	<nav class='navigation'>
+  		    <span class='Title pointer'>Moive List</span>
+  			<span class='Home pointer' id='home' onclick="updateDOM('results')">Home</span>
+  			<span class='pointer' id='Favorites' onclick="updateDOM('favorites')">Favorites</span>
+  	</nav>
+  <div class='displayContainer' id='displayContainer'>
+  <div class='searchContainer' id='searchContainer'>
+  	<div class='searchBox'>
+      <form>
+  		<input class='inputBox' type="text" name="name" placeholder="search name..." id='inputBox'>
+  		<button  type='submit' class='SearchButton' id='SearchButton'>Search</button>
+      </form>
+  	</div>
+  	<div class='displayBox'>
+  		<i class="fa fa-th" aria-hidden="true" id='showCard'></i>
+  		<i class="fa fa-bars" aria-hidden="true" id='showNav'></i>
+  </div>		
+  	</div>
+  	<div class='NavBarContainer' id='NavBarContainer' hidden>
+  		<nav>
+  			<ul>
+  		    </ul>
+  		   </nav>
+  	</div>
+  	<div class='cardList' id='cardList'>
+  	</div>
+  </div>
+  <div class='save-confirmed' id='saveConfirmed' hidden >
+    <h1>ADDED!</h1>
+  </div>
+  </div>
+  <footer class='pageContainer'>
+    <div class='page' onclick="moreMovies('results','man')">1</div>
+    <div class='page' onclick="moreMovies('results','girl')">2</div>
+    <div class='page' onclick="moreMovies('results','city')">3</div>
+    <div class='page' onclick="moreMovies('results','Harry')">4</div>
+    <div class='page' onclick="moreMovies('results','zombie')">5</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
