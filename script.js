@@ -25,9 +25,11 @@ let isInHome = true;
 //Get movies from Movie API
 async function getMoviesPictures(page){
  try{
+  home.classList.add('clickToBlue');
  	const response = await fetch("https://www.omdbapi.com/?apikey=64bcd12d&s=man&type=movie&page=2");
     result = await response.json();
     resultObject = result.Search;
+    console.log(resultObject);
 }catch(error){
 	//catch error here
 }
@@ -128,13 +130,13 @@ function createNavDom(page){
 function displayCard(){
   NavBarContainer.hidden = true;
   cardList.classList.remove('disappear')
-  footer.classList.replace('navPageContainer', 'pageContainer');
+  // footer.classList.add('pageContainer');
 }
 
 function displayNav(){
   cardList.classList.add('disappear')
-  footer.classList.replace('pageContainer', 'navPageContainer')
   NavBarContainer.hidden = false;
+  // footer.classList.remove('pageContainer');
 }
 
 //Click More Button, get movie's detail
@@ -186,9 +188,11 @@ function updateDOM(page){
   if (page === 'results'){
     favorite.classList.remove('clickToBlue');
     home.classList.add('clickToBlue');
+    footer.classList.add('pageContainer');
   }else{
     home.classList.remove('clickToBlue');
     favorite.classList.add('clickToBlue');
+    footer.classList.remove('pageContainer');
   }
   //Get Favorites from localStorage
   if(localStorage.getItem('moviesFavorites')){
